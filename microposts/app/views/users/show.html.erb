@@ -1,0 +1,23 @@
+<div class="row">
+  <aside class="col-xs-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= @user.name %>
+        </h3>
+      </div>
+      
+      <div class="panel-body">
+        <img class="media-object img-rounded img-responsice" src="<%= gravatar_url(@user, { size: 300 }) %>" alt="" style="max-width: 100%" >
+      </div>
+    </div>
+    <%= render 'relationships/follow_button', user: @user %>
+  </aside>
+  
+  <div class="col-xs-8">
+    <%= render 'links' %>
+    
+    <%= render 'microposts/microposts', microposts: @microposts %>
+  </div>
+  
+</div>
